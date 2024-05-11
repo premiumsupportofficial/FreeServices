@@ -26,23 +26,21 @@
 }
 
 .carousel_container {
-    position: relative;
-    width: 100%; /* Full width of the container */
-    overflow: hidden; /* Hide anything outside this container */
-    margin: 20px auto; /* Centering the carousel */
-}
-
-.carousel_slide {
-    display: flex; /* Align slides in a row */
-    width: 100%; /* Each slide takes full width of the container */
-    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /* Increase or adjust the width as needed */
+    height: auto; /* Adjust based on the image height or as needed */
+    margin: 40px auto 0 auto; /* Increase top margin to push it below the header */
+    overflow: hidden; /* Hides anything outside this container */
+    position: relative; /* Ensures that absolute positioning is relative to this container */
 }
 
 .carousel_image {
-    width: 100%; /* Set a specific width if required */
-    height: 300px; /* Set a specific height */
-    object-fit: contain; /* Ensure images are not cropped */
-    margin: 0 5px; /* Space between images */
+    width: 100%; /* Adjust to control the image width */
+    height: 500px; /* Increase height */
+    object-fit: cover; /* Adjust this to 'contain' if you don't want images to be cropped */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds shadow for better visibility */
 }
 
 /* Style for partially showing the next/previous images */
@@ -56,6 +54,41 @@
 .carousel_slide img.active {
     opacity: 1; /* Highlight the active image */
 }
+.carousel_slide {
+    display: block; /* Change to flex if you want slides side by side */
+    width: 100%; /* Each slide takes full width of the container */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
+}
 
+
+
+/* Navigation buttons */
+.carousel_button-left, .carousel_button-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background-color: #fff; /* Visible against the image */
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.carousel_button-left {
+    left: -50px; /* Adjust to be visible outside the image area */
+}
+
+.carousel_button-right {
+    right: -50px; /* Adjust to be visible outside the image area */
+}
+
+/* Hover effects on buttons */
+.carousel_button-left:hover, .carousel_button-right:hover {
+    background-color: #666;
+    color: #fff;
+}
 
   
