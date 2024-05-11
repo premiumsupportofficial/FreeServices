@@ -27,51 +27,35 @@
 
 .carousel_container {
     position: relative;
-    max-width: 600px; /* Adjust based on your layout */
-    margin: auto;
-    overflow: hidden;
+    width: 100%; /* Full width of the container */
+    overflow: hidden; /* Hide anything outside this container */
+    margin: 20px auto; /* Centering the carousel */
 }
 
 .carousel_slide {
-    display: none;
-    text-align: center;
+    display: flex; /* Align slides in a row */
+    width: 100%; /* Each slide takes full width of the container */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
 }
 
 .carousel_image {
-    width: 100%; /* Responsive image width */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Set a specific width if required */
+    height: 300px; /* Set a specific height */
+    object-fit: contain; /* Ensure images are not cropped */
+    margin: 0 5px; /* Space between images */
 }
 
-.carousel_text {
-    background-color: #000;
-    color: #fff;
-    font-size: 16px;
-    padding: 8px;
+/* Style for partially showing the next/previous images */
+.carousel_slide img {
+    flex-shrink: 0; /* Prevents resizing of images */
+    width: calc(100% / 3); /* Show three images at a time */
+    opacity: 0.5; /* Dim images that are not active */
+    transition: opacity 0.5s ease;
 }
 
-.carousel_button-left,
-.carousel_button-right {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+.carousel_slide img.active {
+    opacity: 1; /* Highlight the active image */
 }
 
-.carousel_button-right {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.carousel_button-left:hover, .carousel_button-right:hover {
-    background-color: rgba(0,0,0,0.8);
-}
 
   
