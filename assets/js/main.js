@@ -180,25 +180,5 @@ function showSlides(n) {
     slides[slideIndex].style.display = "block";
 }
 
-var slideIndex = 1;
-showSlides(slideIndex);
 
-function moveSlide(n) {
-    showSlides(slideIndex += n);
-}
-
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("carousel_slide");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex-1].style.display = "block";
-    // Add 'active' class to the centered image
-    var imgs = document.querySelectorAll(".carousel_slide img");
-    imgs.forEach(img => img.classList.remove("active"));
-    imgs[slideIndex-1].classList.add("active");
-}
 
