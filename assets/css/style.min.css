@@ -26,19 +26,23 @@
 }
 .carousel_container {
     display: flex;
-    justify-content: center; /* Ensures content is centered horizontally */
-    align-items: center; /* Ensures content is centered vertically */
-    width: 100%; /* Full width to stretch across the container */
-    overflow: hidden;
-    position: relative;
-    padding: 20px 0; /* Added padding for spacing */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden; /* Ensures no scroll bars appear */
 }
 
 .carousel_slide {
-    width: 100%; /* Each slide takes full width of the container */
-    display: flex; /* Flex to use justify-content and align-items */
-    justify-content: center; /* Center slides horizontally */
-    align-items: center; /* Center slides vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Adjust this if you want to show part of the next/prev images */
+}
+
+.carousel_image img {
+    width: 100%; /* Adjust based on your needs */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Adjust this to 'cover' if you want to fill the area */
 }
 
 .carousel_image {
