@@ -33,8 +33,11 @@
 }
 
 .carousel_slide {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    width: 100%; /* Ensure full width */
 }
 
 .carousel_image {
