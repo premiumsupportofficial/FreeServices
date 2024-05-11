@@ -30,7 +30,10 @@
     max-width: 600px; /* Adjust based on your layout */
     margin: auto;
     overflow: hidden;
+    margin-top: 80px;
 }
+
+
 
 .carousel_slide {
     display: flex;
@@ -56,21 +59,26 @@
 .carousel_button-right {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 50%; /* Centers vertically */
+    transform: translateY(-50%); /* Offset by half of its own height */
     width: auto;
     padding: 16px;
-    margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
     user-select: none;
+    background-color: rgba(0,0,0,0.8); /* For better visibility */
+}
+
+.carousel_button-left {
+    left: 0;
+    border-radius: 3px 0 0 3px;
 }
 
 .carousel_button-right {
     right: 0;
-    border-radius: 3px 0 0 3px;
+    border-radius: 0 3px 3px 0;
 }
 
 .carousel_button-left:hover, .carousel_button-right:hover {
