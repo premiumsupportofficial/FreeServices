@@ -24,15 +24,27 @@
     border-radius: 50%; /* Makes it round */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-
 .carousel_container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Adjust width to fit the container */
-    margin: 40px auto 20px; /* Top margin increased, bottom margin for spacing */
+    justify-content: center; /* Ensures content is centered horizontally */
+    align-items: center; /* Ensures content is centered vertically */
+    width: 100%; /* Full width to stretch across the container */
     overflow: hidden;
     position: relative;
+    padding: 20px 0; /* Added padding for spacing */
+}
+
+.carousel_slide {
+    width: 100%; /* Each slide takes full width of the container */
+    display: flex; /* Flex to use justify-content and align-items */
+    justify-content: center; /* Center slides horizontally */
+    align-items: center; /* Center slides vertically */
+}
+
+.carousel_image {
+    max-width: 100%; /* Maximum width of image is 100% of its container */
+    height: auto; /* Height is auto to maintain aspect ratio */
+    object-fit: contain; /* Ensures the image is completely visible */
 }
 
 /* Style for partially showing the next/previous images */
@@ -51,19 +63,6 @@
 .carousel_button-left:hover, .carousel_button-right:hover {
     background-color: #666;
     color: #fff;
-}
-
-.carousel_slide {
-    display: flex;
-    justify-content: center; /* Centering slides */
-    width: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel_image {
-    width: auto; /* maintain image aspect ratio */
-    height: 500px; /* Fixed height */
-    object-fit: contain; /* Adjust to contain to avoid cropping */
 }
 
 /* Navigation buttons positioned within view */
